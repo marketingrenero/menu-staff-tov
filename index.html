@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RE NERO · Menu staff · Torino Outlet Village</title>
+<style>body{margin:0;font-family:Helvetica,Arial,sans-serif;color:#8F8F8F;text-align:center;padding:60px 20px}</style>
+</head>
+<body>
+<div id="loading">Re Nero · menu staff</div>
+<script>
+(function(){
+  var url='https://uaexmkcbchzqrriwbffv.supabase.co/rest/v1/menu_pages?select=html&slug=eq.staff-tov';
+  var key='sb_publishable_Gd5TqeEH5lO_sLAlY2Ygxg_FBkpR_WO';
+  fetch(url,{headers:{apikey:key,Authorization:'Bearer '+key}})
+    .then(function(r){return r.json();})
+    .then(function(d){
+      if(d&&d[0]&&d[0].html){document.open();document.write(d[0].html);document.close();}
+      else{document.getElementById('loading').textContent='Menu non disponibile';}
+    })
+    .catch(function(){document.getElementById('loading').textContent='Menu non disponibile';});
+})();
+</script>
+</body>
+</html>
